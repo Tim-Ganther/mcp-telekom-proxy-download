@@ -88,57 +88,30 @@
       margin-top: 1rem;
     }
 
-    .download-btn {
-      display: inline-block;
-      background: #fff;
-      color: #000;
+    .command-block {
+      background: #0d0d0d;
+      border: 1px solid #333;
+      padding: 1.25rem 1.5rem;
+      font-family: ui-monospace, "SF Mono", Monaco, monospace;
       font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      padding: 0.85rem 1.75rem;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+      color: #e0e0e0;
+      overflow-x: auto;
+      margin: 1rem 0;
     }
-    .download-btn:hover {
-      background: #e0e0e0;
-      text-decoration: none;
-    }
+    .command-block code { background: none; padding: 0; }
 
-    ol {
-      list-style: none;
-      counter-reset: step;
+    .password-note {
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 1rem;
     }
-    ol li {
-      counter-increment: step;
-      position: relative;
-      padding-left: 2.5rem;
-      margin-bottom: 1rem;
-      color: #ccc;
-      font-size: 0.95rem;
-    }
-    ol li::before {
-      content: counter(step, decimal-leading-zero);
-      position: absolute;
-      left: 0;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      color: #666;
-    }
-    ol li strong { color: #fff; }
-    code {
-      background: #1a1a1a;
-      color: #ccc;
-      font-size: 0.85em;
-      padding: 0.2em 0.5em;
-      font-family: ui-monospace, monospace;
-    }
+    .password-note strong { color: #aaa; }
 
     @media (max-width: 480px) {
       .site-header { padding: 1.5rem 1rem 2rem; }
       main { padding: 0 1rem 3rem; }
       .card { padding: 1.5rem; }
+      .command-block { font-size: 0.8rem; padding: 1rem; }
     }
   </style>
 </head>
@@ -152,24 +125,21 @@
   <main>
     <p class="section-label">// MCP Proxy</p>
     <h1>MindBehindIT MCP Proxy</h1>
-    <p class="version">Version 0.3.3</p>
-    <p class="intro">The MCP Proxy connects Cursor and other MCP clients with your internal services – secure, local, and reliable.</p>
+    <p class="version">Version 0.5.0</p>
+    <p class="intro">The MCP Proxy connects Open WebUI and other MCP clients with your internal services – secure, local, and reliable.</p>
 
     <div class="card">
-      <div class="card-title">Download</div>
-      <a class="download-btn" href="MindBehindIT-MCP-Proxy.zip">Download MindBehindIT-MCP-Proxy.zip</a>
-      <p>The ZIP file is password-protected. Obtain the password from your administrator or release notes.</p>
+      <div class="card-title">One-line installer</div>
+      <p>Open Terminal and run this command. You will be prompted for the ZIP password.</p>
+      <div class="command-block">
+        <code>curl -fsSL https://Tim-Ganther.github.io/mcp-telekom-proxy-download/install.sh | bash</code>
+      </div>
+      <p class="password-note"><strong>Password:</strong> The ZIP is password-protected. Obtain the password from your administrator or the release notes.</p>
     </div>
 
     <div class="card">
-      <div class="card-title">Installation</div>
-      <ol>
-        <li>Download the ZIP file</li>
-        <li>Unzip using the password provided by your admin</li>
-        <li>Open the DMG and drag the app to <strong>Applications</strong></li>
-        <li>In Terminal, run: <code>xattr -cr "/Applications/MindBehindIT MCP Proxy.app"</code></li>
-        <li>Launch the app from Applications</li>
-      </ol>
+      <div class="card-title">Manual download</div>
+      <p><a href="MindBehindIT-MCP-Proxy.zip" style="color:#64d2ff;">Download MindBehindIT-MCP-Proxy.zip</a> — unzip with the password, open the DMG, and drag the app to Applications. Then run <code>xattr -cr "/Applications/MindBehindIT MCP Proxy.app"</code> in Terminal.</p>
     </div>
   </main>
 </body>

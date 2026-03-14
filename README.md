@@ -7,6 +7,16 @@ This repository hosts the public download page for **MindBehindIT MCP Proxy**.
 
 ## Installation
 
+### One-line installer (recommended)
+
+```bash
+curl -fsSL https://<username>.github.io/mcp-telekom-proxy-download/install.sh | bash
+```
+
+Replace `<username>` with your org's GitHub username. You will be prompted for the ZIP password.
+
+### Manual
+
 1. Download the ZIP from the [download page](index.html)
 2. Unzip using the password provided by your admin
 3. Open the DMG and drag the app to **Applications**
