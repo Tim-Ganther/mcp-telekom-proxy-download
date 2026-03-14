@@ -32,7 +32,7 @@ echo ""
 echo "  The password is provided in the release notes or by your administrator."
 echo ""
 
-read -rsp "  Enter ZIP password: " PASSWORD
+read -rsp "  Enter ZIP password: " PASSWORD < /dev/tty
 echo ""
 echo ""
 
