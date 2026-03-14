@@ -58,7 +58,7 @@ if [[ ! -f "$DMG_PATH" ]]; then
 fi
 
 echo "  Mounting DMG..."
-MOUNT_POINT=$(hdiutil attach -nobrowse -readonly -quiet -noverify "$DMG_PATH" | tail -1 | awk '{print $3}')
+MOUNT_POINT=$(hdiutil attach -nobrowse -readonly -noverify "$DMG_PATH" 2>&1 | grep "/Volumes/" | head -1 | sed 's|.*/Volumes/|/Volumes/|' | tr -d '\n')
 trap 'hdiutil detach -quiet "$MOUNT_POINT" 2>/dev/null; rm -rf "$TMPDIR"' EXIT
 
 echo "  Installing to Applications..."
